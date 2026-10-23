@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1F06AC" />
+      <stop offset="50%" stop-color="#0F42C0" />
+      <stop offset="100%" stop-color="#5882E8" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E3EF4F" />
+      <stop offset="100%" stop-color="#D4E03B" />
+    </linearGradient>
+  </defs>
+
+  <!-- Squircle rounded background with safe-zone margin -->
+  <rect width="512" height="512" rx="128" fill="url(#bgGrad)" />
+
+  <!-- Modern Acoustic Waveform Bars (Safe 80% inner circle) -->
+  <g fill="url(#accentGrad)" transform="translate(96, 136)">
+    <!-- Bar 1 -->
+    <rect x="0" y="80" width="28" height="80" rx="14" />
+    <!-- Bar 2 -->
+    <rect x="48" y="40" width="28" height="160" rx="14" />
+    <!-- Bar 3 -->
+    <rect x="96" y="10" width="28" height="220" rx="14" />
+    <!-- Bar 4 (Center tall) -->
+    <rect x="144" y="0" width="28" height="240" rx="14" />
+    <!-- Bar 5 -->
+    <rect x="192" y="20" width="28" height="200" rx="14" />
+    <!-- Bar 6 -->
+    <rect x="240" y="60" width="28" height="120" rx="14" />
+    <!-- Bar 7 -->
+    <rect x="288" y="90" width="28" height="60" rx="14" />
+  </g>
+</svg>

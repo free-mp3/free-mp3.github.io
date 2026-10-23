@@ -1,0 +1,13 @@
+---
+import Layout from '../layouts/Layout.astro';
+import App from '../App.tsx';
+---
+
+<Layout
+  title="Free MP3 Converter Online — Zero-Server Client-Side Audio Converter"
+  description="Convert audio & video to MP3 100% client-side in your browser. Zero server uploads, absolute privacy, 320 kbps studio quality, batch conversion, and offline PWA support."
+>
+  <div id="root">
+    <App client:load />
+  </div>
+</Layout>

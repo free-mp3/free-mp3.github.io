@@ -1,0 +1,6 @@
+{
+  "name": "Free-MP3 Converter",
+  "description": "Zero-Server Client-Side MP3 & Audio Converter with 100% browser-based audio transcoding, batch conversion, and offline PWA capability.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

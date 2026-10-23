@@ -1,0 +1,236 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Free MP3 Converter Online — Zero-Server Client-Side Audio Converter",
+  description = "Convert audio & video to MP3 100% client-side in your browser. Zero server uploads, absolute privacy, 320 kbps studio quality, batch conversion, and offline PWA support."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QLKT4G9196"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-QLKT4G9196');
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content="free mp3 converter, convert audio to mp3, client side mp3 converter, offline mp3 converter, video to mp3, web audio api, 320kbps mp3 converter, private audio converter, pwa audio converter" />
+    <meta name="author" content="Free-MP3" />
+    <meta name="theme-color" content="#1F06AC" />
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- Theme Initialization Script -->
+    <script is:inline>
+      (function() {
+        try {
+          const theme = localStorage.getItem('freemp3_theme');
+          if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.style.backgroundColor = '#08051A';
+          } else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.style.backgroundColor = '#f8fafc';
+          }
+        } catch (_) {}
+      })();
+    </script>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://free-mp3.github.io/" />
+
+    <!-- Open Graph Social Share Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://free-mp3.github.io/" />
+    <meta property="og:site_name" content="Free-MP3" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://free-mp3.github.io/icon-512.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:image:alt" content="Free-MP3 Client-Side Audio Converter Logo" />
+
+    <!-- Twitter / X Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://free-mp3.github.io/icon-512.png" />
+
+    <!-- Progressive Web App (PWA) & Mobile Meta -->
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Free-MP3" />
+
+    <!-- Schema.org JSON-LD Structured Data: WebApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Free-MP3 Converter",
+      "url": "https://free-mp3.github.io/",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires HTML5 Web Audio API and WebAssembly support",
+      "description": "Zero-server, 100% client-side audio and video to MP3 converter with batch processing, audio trimming, peak normalization, and offline PWA support.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "100% Client-Side In-Browser Audio Transcoding",
+        "Zero Remote Server File Uploads (Complete Privacy)",
+        "320 kbps Studio Quality Audio Encoding",
+        "Progressive Web App with Full Offline Functionality",
+        "Batch File Transcoding with 1-Click ZIP Download",
+        "Audio Peak Normalization and Trimming"
+      ]
+    }
+    </script>
+
+    <!-- Schema.org JSON-LD Structured Data: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://free-mp3.github.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Audio Tools",
+          "item": "https://free-mp3.github.io/#tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Free MP3 Converter",
+          "item": "https://free-mp3.github.io/#converter"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Schema.org JSON-LD Structured Data: HowTo -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Convert Video or Audio to MP3 Locally in Your Browser",
+      "description": "Step-by-step instructions for converting media files to high-fidelity MP3 without uploading to any external server.",
+      "totalTime": "PT1M",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Select Audio or Video Files",
+          "text": "Drag and drop your audio or video files into the Free-MP3 dropzone or click Browse to select files from your device."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Configure MP3 Bitrate and Audio Tweaks",
+          "text": "Select your desired audio bitrate (128 kbps Standard, 192 kbps High, or 320 kbps Studio Quality) and optionally enable peak normalization or audio trimming."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Convert Locally and Download MP3",
+          "text": "Click Convert All to MP3 to encode the files locally using Web Audio API, preview using the built-in mini player, and download your converted MP3 file or batch ZIP archive."
+        }
+      ]
+    }
+    </script>
+
+    <!-- Schema.org JSON-LD Structured Data: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Are my audio or video files uploaded to any server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Never. Free-MP3 executes 100% inside your browser using the HTML5 Web Audio API and WebAssembly MP3 encoder. Your media files never leave your local device, ensuring maximum privacy and confidentiality."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which file formats can I convert to MP3?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can convert virtually all audio and video formats decoded by your browser, including MP4, WebM, MKV, MOV, WAV, FLAC, OGG, AAC, and M4A."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use Free-MP3 without an internet connection?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! Free-MP3 is a Progressive Web App (PWA). Once loaded or added to your home screen, the application and audio processing engine work completely offline."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between 128k, 192k, and 320k bitrates?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "128 kbps is standard voice and podcast quality with compact file sizes. 192 kbps offers high clarity for music. 320 kbps represents the maximum MP3 studio fidelity with zero discernible audio compression artifacts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there any file size limit or subscription cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Free-MP3 is 100% free and open-source forever. There are no subscriptions, paywalls, or artificial file limits. You can process files up to several hundred megabytes depending on your device RAM."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I convert multiple files at once?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! Free-MP3 supports batch processing. Drag and drop multiple files to encode them sequentially, then download individual MP3s or a combined ZIP archive with one click."
+          }
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body class="bg-slate-50 dark:bg-[#08051A] text-slate-900 dark:text-slate-100 transition-colors">
+    <slot />
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').catch(() => {});
+        });
+      }
+    </script>
+  </body>
+</html>
